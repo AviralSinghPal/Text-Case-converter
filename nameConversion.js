@@ -35,7 +35,7 @@ function camelCase(str) {
         return word.charAt(0).toUpperCase()+word.substring(1).toLowerCase();        
       }).join("_");
   }
-  function snakeCase( str ) {
+  function snakeCase(str) {
     return str.split(" ").map((character) => {
         if (character == character.toLowerCase()) {
           return "" + character.toUpperCase();
@@ -44,6 +44,13 @@ function camelCase(str) {
         }
       }).join("_");
   }
+function screamingSnakeCase(str){
+    const strArr = str.split(" ");
+    const snakeArr = strArr.reduce((acc, val) => {
+      return acc.concat(val.toLowerCase());
+    }, []);
+    return snakeArr.join("_");
+}
   function kebabCase(str) {
     return str
       .replace(/([a-z])([A-Z])/g, "$1-$2")
