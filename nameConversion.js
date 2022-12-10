@@ -10,6 +10,7 @@ btn.addEventListener("click",() => {
     document.getElementById("camel-case").innerText = camelCase(form);
     document.getElementById("pascal-case").innerText = pascalCase(form);
     document.getElementById("snake-case").innerText = snakeCase(form);
+    document.getElementById("screaming-snake-case").innerText = screamingSnakeCase(form);
     document.getElementById("screaming-kebab-case").innerText = screamingKebabCase(form);
     document.getElementById("kebab-case").innerText = kebabCase(form);
 
@@ -50,7 +51,7 @@ function screamingSnakeCase(str){
       return acc.concat(val.toLowerCase());
     }, []);
     return snakeArr.join("_");
-}
+  }
   function kebabCase(str) {
     return str
       .replace(/([a-z])([A-Z])/g, "$1-$2")
